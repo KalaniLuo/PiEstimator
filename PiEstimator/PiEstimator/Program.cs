@@ -63,9 +63,22 @@ class Program
     static decimal EstimatePi(long n)
     {
         Random rand = new Random(System.Environment.TickCount);
-        decimal pi = 0.0m; // m means decimal number type
+        decimal pi = 0.0m;
 
-        // TODO: Calculate Pi
+        long hits = 0;
+
+        for (long i = 0; i <n; i++)
+        {
+            double x = rand.NextDouble();
+            double y = rand.NextDouble();
+
+            if (x * x + y * y<= 1)
+            {
+                hits++;
+            }
+        }
+
+        pi = 4m * hits /n;
 
         return pi;
     }
